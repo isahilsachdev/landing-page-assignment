@@ -32,6 +32,7 @@ const formSubmit = () => {
         firstName.parentElement.classList.remove("error");
         lastName.parentElement.classList.remove("error");
         businessEmail.parentElement.classList.remove("error");
+        businessEmail.parentElement.classList.remove("error-invalid");
         company.parentElement.classList.remove("error");
         country.parentElement.classList.remove("error");
 
@@ -42,6 +43,7 @@ const formSubmit = () => {
         firstName.parentElement.classList.remove("error");
         lastName.parentElement.classList.remove("error");
         businessEmail.parentElement.classList.remove("error");
+        businessEmail.parentElement.classList.remove("error-invalid");
         company.parentElement.classList.remove("error");
         country.parentElement.classList.remove("error");
 
@@ -52,16 +54,30 @@ const formSubmit = () => {
         firstName.parentElement.classList.remove("error");
         lastName.parentElement.classList.remove("error");
         businessEmail.parentElement.classList.remove("error");
+        businessEmail.parentElement.classList.remove("error-invalid");
         company.parentElement.classList.remove("error");
         country.parentElement.classList.remove("error");
 
         businessEmail.parentElement.classList.add("error");
         businessEmail.focus()
+    } else if (!/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/.test(businessEmail.value.trim())) {
+        // Remove error classes from all fields
+        firstName.parentElement.classList.remove("error");
+        lastName.parentElement.classList.remove("error");
+        businessEmail.parentElement.classList.remove("error");
+        businessEmail.parentElement.classList.remove("error-invalid");
+        company.parentElement.classList.remove("error");
+        country.parentElement.classList.remove("error");
+    
+        // Add error class and focus if email is invalid
+        businessEmail.parentElement.classList.add("error-invalid");
+        businessEmail.focus();
     }
     else if(company.value.trim() == "") {
         firstName.parentElement.classList.remove("error");
         lastName.parentElement.classList.remove("error");
         businessEmail.parentElement.classList.remove("error");
+        businessEmail.parentElement.classList.remove("error-invalid");
         company.parentElement.classList.remove("error");
         country.parentElement.classList.remove("error");
 
@@ -72,6 +88,7 @@ const formSubmit = () => {
         firstName.parentElement.classList.remove("error");
         lastName.parentElement.classList.remove("error");
         businessEmail.parentElement.classList.remove("error");
+        businessEmail.parentElement.classList.remove("error-invalid");
         company.parentElement.classList.remove("error");
         country.parentElement.classList.remove("error");
 
