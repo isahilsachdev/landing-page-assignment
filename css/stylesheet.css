@@ -886,6 +886,10 @@ button.submit__btn:active {
     padding: 13px 8px;
 }
 
+.banner .grid__2 .form__wrap .fields__wrap .field.error:has(select)::before {
+    bottom: -56px;
+}
+
 .banner .grid__2 .form__wrap .fields__wrap .field.error-invalid::before {
     content: "Please enter a valid email address.";
     position: absolute;
